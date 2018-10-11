@@ -1,0 +1,75 @@
+package service;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
+import dao.DbFunctions;
+
+public class login {
+	public void getloginData() throws FileNotFoundException, IOException
+    {
+   	 
+		 Scanner sc=new Scanner(System.in);
+		 Validation1 v=new Validation1();
+		 System.out.println("Enter login details");
+		 
+		 boolean run=true;
+		 String username="";
+		 String usernametemp="";
+		 String password="";
+		 String passwordtemp="";
+		 
+		 System.out.println("Enter your username");
+		 while(run) {
+			 
+		 
+		  usernametemp = sc.next();
+		 
+		if(v.validateuser(usernametemp))
+	      
+	 {
+		 username=usernametemp;
+		 run=false;
+	 }
+	 else { 
+		 System.out.println("Re enter your username id\tg");
+		 run= true;
+	 }
+
+		System.out.println("username is" +" "+ username);
+		
+		 
+		 
+		 
+		 }
+		 
+		 run=true;
+		 System.out.println("Enter your password");
+		 String cpassword="";
+		 
+		 while(run)
+		 {
+		 passwordtemp =sc.next();
+		if(v.validatecpass(passwordtemp))
+	      
+	 {
+		 cpassword=passwordtemp;
+		 run=false;
+	 }
+	 else { 
+		 System.out.println("Re enter your password id\tg");
+		 run= true;
+	 }
+		 }
+		
+		 
+		DbFunctions db=new DbFunctions();
+		if(db.fetchData(usernametemp,passwordtemp)) {
+			System.out.println("Success");
+		}
+
+	 System.out.println("Password"+" "+ cpassword);
+  }
+
+}

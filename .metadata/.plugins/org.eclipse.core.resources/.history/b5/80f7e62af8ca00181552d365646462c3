@@ -1,0 +1,13 @@
+
+public class employeedemo {
+	
+	public static void main(String [] args) {
+		
+		example emp;
+		emp= new example(123344,"govind rawat","54544.00);
+	
+		emp.display();
+	}
+
+}
+

@@ -1,0 +1,63 @@
+
+package client;
+
+import java.util.Scanner;
+import module.Data;
+
+public class Main {
+	
+	
+	//array of model
+	
+	public static void main(String[] args) {
+		
+		Main  consumer =new Main();
+		
+
+		consumer.getData();
+		
+		
+		//process
+		
+		// service service =new service();
+		
+	//	service.validateData();
+		
+		//output
+		consumer.printData();
+	}
+	
+	public void getData() {
+		
+		System.out.println("User Registration");
+		 Scannner sc=new Scanner(System.in);
+		 
+		 String firstname = sc.next();
+		 String	lastname =sc.next();
+		 int	id = sc.nextInt();
+		 String mail =sc.next();
+		
+		 String	password = sc.next();
+		 String	dob = sc.next();
+		 
+		 
+		 System.out.println("First name"+ firstname);
+		 System.out.println("Last name"+ lastname);
+		 System.out.println("Customer id"+ id);
+		 System.out.println("Email of customer"+ mail);
+		 System.out.println("Password "+ password);
+		 System.out.println("Date of birth"+ dob);
+		//Read data from user and store to array
+		
+		//model m=new model(, , ,);
+	}
+	
+public void printData() {
+		
+	//print data from array on screen
+	System.out.println();
+	
+	
+	}
+
+}

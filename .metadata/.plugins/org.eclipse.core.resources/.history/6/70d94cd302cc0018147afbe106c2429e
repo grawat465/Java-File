@@ -1,0 +1,36 @@
+package module;
+
+public class Data {
+
+	public String firstname;
+	public String lastname;
+     int id;
+     String mail;
+     String password;
+     String dob;
+     
+     String username;
+     String password;
+	public Data(String firstname, String lastname, int id, String mail, String password, String dob,String username,String password) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.id = id;
+		this.mail = mail;
+		this.password = password;
+		this.dob = dob;
+		this.username=username;
+		this.password=password;
+	}
+	public Data() {
+		super();
+	}
+     
+     //Data members of class
+     
+     public void display() {
+    	 
+     }
+      
+	
+}

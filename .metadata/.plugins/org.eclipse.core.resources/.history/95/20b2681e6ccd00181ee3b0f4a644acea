@@ -1,0 +1,12 @@
+package service;
+
+import java.util.ArrayList;
+
+import module.Data;
+
+public class signup {
+	
+	public static ArrayList<Data>da=new ArrayList<Data>();
+	
+
+}

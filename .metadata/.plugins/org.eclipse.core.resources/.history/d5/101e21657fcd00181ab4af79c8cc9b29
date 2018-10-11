@@ -1,0 +1,86 @@
+package client;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+import module.Data;
+import service.Validation1;
+import service.login;
+import service.signup;
+import java.io.*;
+
+public class Main {
+	
+	Main  user[];
+	
+	signup sign=new signup();
+	login log=new login();
+	//array of model
+	//public static ArrayList<Data>da=new ArrayList<Data>();
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		
+
+		Main client=new Main();
+		  Scanner sc=new Scanner(System.in);
+
+		//user.getData();
+		client.getData();
+	
+		//process
+		
+		// service service =new service();
+		
+	//	service.validateData();
+		
+		//output
+	//	user.printData();
+	}
+	
+	public void getData() throws FileNotFoundException, IOException {
+		
+		System.out.println("User Registration");
+	
+		
+		int flag=1;
+		
+		while(flag==1)
+		{
+           System.out.println("Enter 1 for Sign up");
+           System.out.println("Enter 2 for login");
+           System.out.println("Quit for 3");
+           
+           Scanner sc=new Scanner(System.in);
+           int str=sc.nextInt();
+           switch(str) {
+           case 1: 
+                sign.getsignupData();
+                Random rand = new Random(); 
+                int rand_int1 = rand.nextInt(10000); 
+                  break; 
+           case 2: 
+                log.getloginData();
+                break;
+           default: 
+                  System.out.println("quit");
+                  flag=0;
+               break; 	     
+           } 
+		}
+	}
+          
+		 
+		 // da.add(new Data( firstname,lastname,id,mail,password,username,password));
+           
+	         
+	
+	
+public void printData() {
+		
+	//print data from array on screen
+	System.out.println();
+	
+	
+	}
+
+}
+

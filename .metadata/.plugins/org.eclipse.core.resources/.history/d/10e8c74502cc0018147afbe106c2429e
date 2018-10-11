@@ -1,0 +1,212 @@
+
+package client;
+
+import java.util.Scanner;
+
+
+
+import module.Data;
+import service.Validation1;
+
+import java.io.*;
+
+public class Main {
+	
+	Main  user[];
+	Validation1 v=new Validation1();
+	//array of model
+	
+	public static void main(String[] args) {
+		
+
+		Main client=new Main();
+		  Scanner sc=new Scanner(System.in);
+
+		//user.getData();
+		client.getData();
+		
+		//process
+		
+		// service service =new service();
+		
+	//	service.validateData();
+		
+		//output
+	//	user.printData();
+	}
+	
+	public void getData() {
+		
+		System.out.println("User Registration");
+		int flag=1;
+		while(flag==1)
+		{
+           System.out.println("Enter 1 for Sign up");
+           System.out.println("Enter 2 for login");
+           System.out.println("Quit for 3");
+           
+           Scanner sc=new Scanner(System.in);
+           int str=sc.nextInt();
+           switch(str) {
+           case 1: 
+                 getsignupData();
+                  break; 
+           case 2: 
+               // getloginData();
+                break;
+           default: 
+                  System.out.println("quit");
+                  flag=0;
+               break; 	     
+           } 
+		}
+	}
+           public void getsignupData() {
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter Deatails");
+		 System.out.println("First name");	
+		 String firstname ;
+		
+		 boolean run=true;
+		 while(run)
+		 { 
+			 String firstnametemp= sc.nextLine();
+		 if(v.validateFirstName(firstnametemp))
+		 {
+			 
+			 firstname=firstnametemp;
+			 run=false;
+			 
+		 }
+		 else { 
+			 System.out.println("Reenter your firstname \tg");
+			 run=true;
+		 }
+		 }
+			 run=true;
+			 System.out.println("Enter your Last name");
+		 String lastname;
+		 while(run) {
+		 String	lastnametemp =sc.nextLine();
+		 if(v.validateLastName(lastnametemp))
+			      
+		 {
+			 lastname=lastnametemp;
+			 run=false;
+		 }
+		 else { 
+			 System.out.println("Re enter your lastname\tg");
+			 run= true;
+		 }
+		 
+		 }
+		 run=true;
+		 System.out.println("Customer id");
+		 int id;
+		
+		while(run) {
+			 int	idtemp = sc.nextInt();
+		 if(v.validateid(idtemp))
+		 {
+			 id=idtemp;
+			 run=false;
+		 }
+		 else { 
+			 System.out.println("Re enter your  id not matching \tg");
+			 run=true;
+		 }
+		}
+		run=true;
+		System.out.println("\"Enter you email\"");
+		String mail;
+		
+		 while(run) {
+			 String mailtemp =sc.next();
+			
+			 if(v.validatemail(mailtemp))
+				      
+			 {
+				 mail=mailtemp;
+				 run=false;
+			 }
+			 else { 
+				 System.out.println("Re enter your mail id\tg");
+				 run= true;
+			 }
+			 
+			 }
+		 
+		   run=true;
+		   System.out.println("Password ");
+		   
+		 String	password;
+		 while(run)
+		 {
+			 String passwordtemp=sc.next();
+			 
+			 if(v.validatepass(passwordtemp))
+			      
+			 {
+				 password=passwordtemp;
+				 run=false;
+			 }
+			 else { 
+				 System.out.println("Re enter your password id\tg");
+				 run= true;
+			 }
+			 
+			 }
+		 
+		     System.out.println("Enter your date of birth");
+		 
+		      String	dob = sc.next();
+           }
+	         public void getloginData()
+	         {
+	        	 
+      		 Scanner sc=new Scanner(System.in);
+      		 System.out.println("Enter login details");
+      		 
+      		 boolean run=true;
+      		 String username;
+      		 
+      		 System.out.println("Enter your username");
+      		 while(run) {
+      			 
+      		 
+      		 String usernametemp = sc.next();
+      		 
+      		if(v.validateuser(usernametemp))
+			      
+			 {
+				 username=usernametemp;
+				 run=false;
+			 }
+			 else { 
+				 System.out.println("Re enter your password id\tg");
+				 run= true;
+			 }
+      		 
+      		 
+      		 
+      		 }
+      		 
+      		 run=true;
+      		 String	password =sc.next();
+      		
+      		 
+      		 
+      		 System.out.println("Username" +" "+ username);
+      		 System.out.println("Password"+" "+ password);
+           }
+	
+	
+public void printData() {
+		
+	//print data from array on screen
+	System.out.println();
+	
+	
+	}
+
+}

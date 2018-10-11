@@ -1,0 +1,27 @@
+
+public class PermanentEmployee   extends example {
+	
+	int leave;
+
+	public PermanentEmployee(int leave) {
+		super();
+		this.leave = leave;
+	}
+
+	public PermanentEmployee() {
+		super();
+	}
+
+	public PermanentEmployee(int empid, String empname, double salary,int leave) {
+		super(empid, empname, salary);
+		// TODO Auto-generated constructor stub
+		this.leave=leave;
+	}
+	
+	public void display1() {
+		display();
+		System.out.println("leave"+ this.leave);
+	}
+	
+
+}

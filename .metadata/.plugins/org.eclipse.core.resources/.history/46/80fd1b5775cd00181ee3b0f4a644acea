@@ -1,0 +1,68 @@
+package service;
+
+import java.util.Scanner;
+
+import dao.DbFunctions;
+
+public class login {
+	public void getloginData()
+    {
+   	 
+		 Scanner sc=new Scanner(System.in);
+		 Validation1 v=new Validation1();
+		 System.out.println("Enter login details");
+		 
+		 boolean run=true;
+		 String username="";
+		 
+		 System.out.println("Enter your username");
+		 while(run) {
+			 
+		 
+		 String usernametemp = sc.next();
+		 
+		if(v.validateuser(usernametemp))
+	      
+	 {
+		 username=usernametemp;
+		 run=false;
+	 }
+	 else { 
+		 System.out.println("Re enter your username id\tg");
+		 run= true;
+	 }
+
+		System.out.println("username is" +" "+ username);
+		
+		 
+		 
+		 
+		 }
+		 
+		 run=true;
+		 System.out.println("Enter your password");
+		 String cpassword="";
+		 
+		 while(run)
+		 {
+		 String	passwordtemp =sc.next();
+		if(v.validatecpass(passwordtemp))
+	      
+	 {
+		 cpassword=passwordtemp;
+		 run=false;
+	 }
+	 else { 
+		 System.out.println("Re enter your password id\tg");
+		 run= true;
+	 }
+		 }
+		
+		 
+		DbFunctions db=new DbFunctions();
+		db.fetchData();
+
+	 System.out.println("Password"+" "+ cpassword);
+  }
+
+}

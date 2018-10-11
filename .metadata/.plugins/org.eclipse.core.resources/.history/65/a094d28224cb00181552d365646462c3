@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class employeedemo {
+	
+	public static void main(String [] args) {
+		
+		example emp[];
+		emp=new example[5];
+	    for(int i=0;i<emp.length;i++)
+	    {
+	    	
+	    	
+	    	Scanner sc;
+    		System.out.println("Enter the id of employee");
+    		sc=new Scanner(System.in);
+    		int x=sc.nextInt();
+    		//System.out.println(x);
+
+    		System.out.println("Enter the name of employee");
+    		String y=sc.next();
+    	//	System.out.println(y);
+
+
+    		System.out.println("Enter the Salary of employee");
+    		double z=sc.nextDouble();
+    		//System.out.println(z);
+    		
+    		emp[i]=new example(x,y,z);
+	    	
+	    	
+	    }
+	    	
+	    		
+	    		
+
+
+
+	}
+}
+
+ 

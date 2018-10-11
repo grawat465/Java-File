@@ -1,0 +1,12 @@
+package client;
+
+public class Employee {
+
+	
+	//member data
+	
+	// private
+	//getter and setter
+	//0 args and  paramerter constructor
+	// to string()
+}

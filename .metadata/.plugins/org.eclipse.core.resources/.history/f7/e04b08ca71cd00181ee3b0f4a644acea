@@ -1,0 +1,9 @@
+package dao;
+
+import module.Data;
+
+public class DbFunctions {
+	public void addInFile(Data d) {
+		System.out.println(d.toString());
+	}
+}

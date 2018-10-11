@@ -1,0 +1,109 @@
+package service;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import module.Data;
+
+public class signup {
+	
+	 public void getsignupData() {
+		 Scanner sc=new Scanner(System.in);
+		 Validation1 v=new Validation1();
+		 System.out.println("Enter Details");
+		 System.out.println("First name");	
+		 String firstname ;
+		
+		 boolean run=true;
+		 while(run)
+		 { 
+			 String firstnametemp= sc.nextLine();
+		 if(v.validateFirstName(firstnametemp))
+		 {
+			 
+			 firstname=firstnametemp;
+			 run=false;
+			 
+		 }
+		 else { 
+			 System.out.println("Re-enter your firstname");
+			 run=true;
+		 }
+		 }
+			 run=true;
+			 System.out.println("Enter your Last name");
+		 String lastname;
+		 while(run) {
+		 String	lastnametemp =sc.nextLine();
+		 if(v.validateLastName(lastnametemp))
+			      
+		 {
+			 lastname=lastnametemp;
+			 run=false;
+		 }
+		 else { 
+			 System.out.println("Re- enter your lastname");
+			 run= true;
+		 }
+		 
+		 }
+		 run=true;
+		 System.out.println("Customer id");
+		 int id;
+		
+		while(run) {
+			 int	idtemp = sc.nextInt();
+		 if(v.validateid(idtemp))
+		 {
+			 id=idtemp;
+			 run=false;
+		 }
+		 else { 
+			 System.out.println("Re- enter your  id not matching");
+			 run=true;
+		 }
+		}
+		run=true;
+		System.out.println("Enter you email");
+		String mail;
+		
+		 while(run) {
+			 String mailtemp =sc.next();
+			
+			 if(v.validatemail(mailtemp))
+				      
+			 {
+				 mail=mailtemp;
+				 run=false;
+			 }
+			 else { 
+				 System.out.println("Re enter your mail id\tg");
+				 run= true;
+			 }
+			 
+			 }
+		 
+		   run=true;
+		   System.out.println("Password ");
+		   
+		 String	password;
+		 while(run)
+		 {
+			 String passwordtemp=sc.next();
+			 
+			 if(v.validatepass(passwordtemp))
+			      
+			 {
+				 password=passwordtemp;
+				 run=false;
+			 }
+			 else { 
+				 System.out.println("Re enter your password id\tg");
+				 run= true;
+			 }
+			 
+			 }
+	
+
+	 }
+}

@@ -1,0 +1,58 @@
+package dao;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+import module.Data;
+
+public class DbFunctions {
+	public static ArrayList<Data>da=new ArrayList<Data>();
+	private static int count=0;
+
+	public void addInFile(Data d) throws FileNotFoundException, IOException {
+		System.out.println(d.toString());
+		count++;
+		ObjectOutputStream obj=new ObjectOutputStream(new FileOutputStream("dummy.ser"));
+		da.add(d);
+		System.out.println(da.get(da.size()-1));
+		System.out.println(d.mail+d.password);
+		obj.writeObject(d);
+		obj.close();
+		
+	}
+	
+	public boolean fetchData(String uname,String pass) throws FileNotFoundException, IOException {
+		System.out.println();
+		try {
+			ObjectInputStream obj=new ObjectInputStream(new FileInputStream("dummy.ser"));
+			int i=0;
+			while(i<count) {
+				da.add((Data)obj.readObject());				
+				i++;
+			}
+
+			if(verifyLogin()) {
+				return true;
+			}
+			else {
+				return false;
+			}
+			
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		
+		}
+		return false;
+	}
+	public boolean verifyLogin() {
+		for(Data d:da) {
+			d.username==uname:
+				d.password==pass
+		}
+	}
+}

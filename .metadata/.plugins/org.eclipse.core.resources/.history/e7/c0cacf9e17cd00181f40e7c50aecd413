@@ -1,0 +1,34 @@
+import java.io.*;
+public class CopyFile1 {
+
+   public static void main(String args[]) throws IOException {
+      FileReader in = null;
+      FileWriter out = null;
+
+      try {
+    	    BufferedReader br = new BufferedReader(new FileReader("));
+            while ((thisLine = br.readLine()) != null) {
+               display(thisLine);
+            }       
+         } catch(Exception e) {
+            e.printStackTrace();
+         }
+         finally {
+       	  System.out.println("Total Salary : " + totalSalary);
+         }
+      }
+      public static void display(String emp) {
+   	   String[] employee=emp.split(" ");
+   	   int empID = Integer.parseInt(employee[0]);	
+   	   String empName = employee[1];
+   	   double salary = Double.parseDouble(employee[2]);
+   	   totalSalary += salary;
+   	   salary = grossSalary(salary);
+   	   System.out.print("Id : "+ empID);
+   	   System.out.println(" Name : "+ empName);
+   	   System.out.println(" Salary : "+ salary);
+      }
+      public static double grossSalary(double salary) {
+   	   return salary*2;
+      }
+   }

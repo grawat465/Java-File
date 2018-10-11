@@ -1,0 +1,23 @@
+package dao;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+import module.Data;
+
+public class DbFunctions {
+	public static ArrayList<Data>da=new ArrayList<Data>();
+
+	public void addInFile(Data d) throws FileNotFoundException, IOException {
+		System.out.println(d.toString());
+		ObjectOutputStream obj=new ObjectOutputStream(new FileOutputStream("dummy.ser"));
+		da.add(d);
+		obj.writeObject(d);
+		obj.close();
+		
+		
+	}
+}
